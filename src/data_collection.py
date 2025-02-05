@@ -42,7 +42,7 @@ def save_data(data: pd.DataFrame, filepath: str) -> None:
 def main():
     params_filepath = "params.yaml"
     raw_data_path = os.path.join("data", "raw")
-    data_filepath = r"C:\Users\qiutu\Documents\courses\Data_Thinkers\water_potability_dvc\water_potability.csv"
+    data_filepath = "water_potability.csv"
 
     try:
         data = load_data(data_filepath)
