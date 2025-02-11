@@ -9,6 +9,7 @@ import mlflow
 from mlflow.models import infer_signature
 import dagshub
 
+
 def load_data(filepath: str) -> pd.DataFrame:
     try:
         return pd.read_csv(filepath)
@@ -56,7 +57,8 @@ def save_metrics(metrics_dict: dict, filepath: str) -> None:
 
 def main():
     try:
-        dagshub.init(repo_owner='tqiu', repo_name='water-potability-mlops', mlflow=True)
+        # dagshub.init(repo_owner='tqiu', repo_name='water-potability-mlops', mlflow=True)
+        mlflow.set_tracking_uri(os.environ["MLFLOW_TRACKING_URI"])
         mlflow.set_experiment("Final experiment")
 
         test_data_filepath = "data/processed/test_processed_data.csv"

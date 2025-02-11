@@ -2,8 +2,9 @@ import mlflow
 from mlflow.tracking import MlflowClient
 import dagshub
 import json
+import os
 
-dagshub.init(repo_owner='tqiu', repo_name='water-potability-mlops', mlflow=True)
+mlflow.set_tracking_uri(os.environ["MLFLOW_TRACKING_URI"])
 mlflow.set_experiment("Final experiment")
 
 
